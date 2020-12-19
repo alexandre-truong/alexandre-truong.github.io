@@ -14,7 +14,7 @@
         <script>
             let vidArray = ['src/vid1-1.gif', 'src/vid1-4.gif', 'src/vid1-2.gif', 'src/vid1-3.gif'];
         </script>
-        
+
         <div class="step" id="step-0">
             <div class="container">
                 <h1>Bienvenue ! </h1>
@@ -28,14 +28,14 @@
         <div class="step" id="step-1">
             <h2>Choisissez une qualité de streaming</h2>
             <div style='display: flex'>
-                <div data-url="src/vid1-1.mp4" data-id="A" class="vid-container" style='flex:1'>
+                <div data-video="1" data-id="A" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-1.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
                     </div>
                 </div>
-                <div data-url="src/vid1-4.mp4" data-id="D" class="vid-container" style='flex:1'>
+                <div data-video="2" data-id="D" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-4.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -44,14 +44,14 @@
                 </div>
             </div>
             <div style='display: flex'>
-                <div data-url="src/vid1-2.mp4" data-id="B" class="vid-container" style='flex:1'>
+                <div data-video="3" data-id="B" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-2.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
                     </div>
                 </div>
-                <div data-url="src/vid1-3.mp4" data-id="C" class="vid-container" style='flex:1'>
+                <div data-video="4" data-id="C" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-3.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -62,8 +62,20 @@
         </div>
 
         <div class="step" id="step-2">
-            <video preload="auto" class="player">
-                <source src="" type="video/mp4">
+            <video preload="metadata" class="player">
+                <source src="src/vid1-1.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid1-2.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid1-3.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid1-4.mov" type="video/mp4">
                 Il semblerait que votre lecteur ne supporte pas les vidéos :-(
             </video>
         </div>
@@ -81,7 +93,7 @@
         <div class="step" id="step-4">
             <h2>Choisissez une qualité de streaming</h2>
             <div style='display: flex'>
-                <div data-url="src/vid2-1.mp4" data-id="A" class="vid-container" style='flex:1'>
+                <div data-video="1" data-id="A" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-1.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -89,7 +101,7 @@
                         <img  class='indicator' src="src/indicator1-4.png"></img>
                     </div>
                 </div>
-                <div data-url="src/vid2-4.mp4" data-id="D" class="vid-container" style='flex:1'>
+                <div data-video="2" data-id="D" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-4.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -99,7 +111,7 @@
                 </div>
             </div>
             <div style='display: flex'>
-                <div data-url="src/vid2-2.mp4" data-id="B" class="vid-container" style='flex:1'>
+                <div data-video="3" data-id="B" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-2.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -107,7 +119,7 @@
                         <img  class='indicator' src="src/indicator1-4.png"></img>
                     </div>
                 </div>
-                <div data-url="src/vid2-3.mp4" data-id="C" class="vid-container" style='flex:1'>
+                <div data-video="4" data-id="C" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-3.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -119,8 +131,20 @@
         </div>
 
         <div class="step" id="step-5">
-            <video preload="auto" class="player">
-                <source src="" type="video/mp4">
+            <video preload="metadata" class="player">
+                <source src="src/vid2-1.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid2-2.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid2-3.mov" type="video/mp4">
+                Il semblerait que votre lecteur ne supporte pas les vidéos :-(
+            </video>
+            <video preload="metadata" class="player">
+                <source src="src/vid2-4.mov" type="video/mp4">
                 Il semblerait que votre lecteur ne supporte pas les vidéos :-(
             </video>
         </div>
@@ -146,8 +170,18 @@
 
             var step = 0;
             var groupId = null;
-            var url = "";
+            var id = "";
             var choiceId = null;
+
+            function preloadImage(url) {
+                var _img = new Image();
+                _img.src = url;
+            }
+            
+            function preloadVideo(url) {
+                var _img = new Image();
+                _img.src = url;
+            }
 
             function nextStep () {
                 $(`#step-${step}`).hide();
@@ -177,26 +211,29 @@
                     var elt2 = $(elt).find('.overlay').hide();
                 })
                 elt.addEventListener('click', () => {
-                    url = $(elt).attr("data-url");
-
-                    console.log("step : ", step);
-                    var player = $(`#step-${step+1} .player`)[0];
-                    player.src = url;
+                    id = $(elt).attr("data-video");
+                    console.log("id= ", id)
+                    var player = $(`#step-${step+1} video`)[id-1];
+                    console.log("player: ", player);
+                    $(player).show();
+                    player.play();
+                    player.addEventListener('ended', () => {
+                        nextStep();
+                    })
                     choiceId = $(elt).attr("data-id");
                     document.getElementById(`step-${step+2}`).innerHTML = document.getElementById(`step-${step+2}`).innerHTML.replace('%CHOICEID%', choiceId);
                     nextStep();
-                    player.play();
 
-                    var duration = 0;
-                    switch(step) {
-                        case 2: duration = 20000;
-                        break;
-                        case 5: duration = 30000;
-                    }
-                    console.log("duration ", duration );
-                    setTimeout(() => {
-                        nextStep();
-                    }, duration);
+                    // var duration = 0;
+                    // switch(step) {
+                    //     case 2: duration = 20000;
+                    //     break;
+                    //     case 5: duration = 30000;
+                    // }
+                    // console.log("duration ", duration );
+                    // setTimeout(() => {
+                    //     nextStep();
+                    // }, duration);
                 })
             })
             

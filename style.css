@@ -3,6 +3,10 @@ body {
     background-color: black
 }
 
+video {
+    display: none;
+}
+
 h2 {
     color: white;
 }
