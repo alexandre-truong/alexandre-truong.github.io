@@ -35,7 +35,7 @@
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
                     </div>
                 </div>
-                <div data-video="2" data-id="D" class="vid-container" style='flex:1'>
+                <div data-video="4" data-id="D" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-4.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -44,14 +44,14 @@
                 </div>
             </div>
             <div style='display: flex'>
-                <div data-video="3" data-id="B" class="vid-container" style='flex:1'>
+                <div data-video="2" data-id="B" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-2.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
                     </div>
                 </div>
-                <div data-video="4" data-id="C" class="vid-container" style='flex:1'>
+                <div data-video="3" data-id="C" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid1-3.gif">
                     <div class="overlay">
                         <div class='background'></div>
@@ -98,33 +98,33 @@
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
-                        <img  class='indicator' src="src/indicator1-4.png"></img>
+                        <img  class='indicator' src="src/indicator%GROUP%-1.png"></img>
                     </div>
                 </div>
-                <div data-video="2" data-id="D" class="vid-container" style='flex:1'>
+                <div data-video="4" data-id="D" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-4.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
-                        <img  class='indicator' src="src/indicator1-4.png"></img>
+                        <img  class='indicator' src="src/indicator%GROUP%-4.png"></img>
                     </div>
                 </div>
             </div>
             <div style='display: flex'>
-                <div data-video="3" data-id="B" class="vid-container" style='flex:1'>
+                <div data-video="2" data-id="B" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-2.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
-                        <img  class='indicator' src="src/indicator1-4.png"></img>
+                        <img  class='indicator' src="src/indicator%GROUP%-2.png"></img>
                     </div>
                 </div>
-                <div data-video="4" data-id="C" class="vid-container" style='flex:1'>
+                <div data-video="3" data-id="C" class="vid-container" style='flex:1'>
                     <img class="preview" src="src/vid2-3.gif">
                     <div class="overlay">
                         <div class='background'></div>
                         <div class='instruction'>CLIQUER POUR VISIONNER</div>
-                        <img  class='indicator' src="src/indicator1-4.png"></img>
+                        <img  class='indicator' src="src/indicator%GROUP%-3.png"></img>
                     </div>
                 </div>
             </div>
@@ -193,14 +193,15 @@
                 $('.overlay').hide();
                 $('.step').hide();
 
-                groupId = Math.round(Math.random()*4);
+                groupId = Math.floor(Math.random()*4);
                 document.getElementById('step-0').innerHTML = document.getElementById('step-0').innerHTML.replace('%GROUPID%', groupId);
                 $('#step-0').show();
-                console.log("Groupe ", groupId);
-                $('.indicator').each((i, elt) => {
-                    var src = elt.src;
-                    elt.src = src.replace('%GROUP%', groupId);
-                })
+                if(groupId != 0) {
+                    $('.indicator').each((i, elt) => {
+                        var src = elt.src;
+                        elt.src = src.replace('%GROUP%', groupId);
+                    })
+                }
             })
 
             $('.vid-container').each((i, elt) => {
